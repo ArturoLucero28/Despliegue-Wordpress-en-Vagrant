@@ -13,7 +13,7 @@ Este proyecto tiene como objetivo desplegar un CMS Wordpress en una infraestruct
      - [Configuración del Servidor Web](#configuración-del-servidor-web)
   
 6. [Capa 3: Datos](#capa-3-datos)
-7. [Personalización](#¡personalización)
+7. [Error](#Error)
 8. [Entrega](#entrega)
 
 ---
@@ -159,14 +159,13 @@ sudo systemctl restart nfs-kernel-server
 sudo apt-get update
 sudo apt-get install -y mariadb-server
 
-# Configurar MariaDB para permitir conexiones remotas (si es necesario)
-# En producción, asegúrate de configurar esto de manera segura y según tus necesidades.
+# Configurar MariaDB para permitir conexiones remotas+
 sudo sed -i 's/bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/' /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # Reiniciar el servicio MariaDB para aplicar la configuración
 sudo systemctl restart mariadb
 
-# Crear una base de datos y un usuario de ejemplo (ajusta según tus necesidades)
+# Crear una base de datos y un usuario de ejemplo
 sudo mysql -e "CREATE DATABASE IF NOT EXISTS mydatabase;"
 sudo mysql -e "CREATE USER 'arturo'@'%' IDENTIFIED BY '1234';"
 sudo mysql -e "GRANT ALL PRIVILEGES ON mydatabase.* TO 'arturo'@'%';"
@@ -256,9 +255,13 @@ Aqui principalmente del aprovisamiento podemos destacar la creacion de la base d
 
 ![image](https://github.com/ArturoLucero28/Despliegue-Wordpress-en-Vagrant/assets/146435794/7ec57c25-c808-4e94-b244-3b9d92836fa2)
 
+## Error
 
 Y para finalizar esta practica no me ha salido el resultado wordpress debido a este error a pesar de añadirle todos los permisos posibles a las carpetas compartidas, repasar la configuración de nginx, revisor los errores de log .
 
 ![image](https://github.com/ArturoLucero28/Despliegue-Wordpress-en-Vagrant/assets/146435794/61ecf3a9-55f4-47be-8653-878a1da47e81)
 
+## Entrega
+
+https://clipchamp.com/watch/7pjWoBt3z08
 
