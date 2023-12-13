@@ -35,6 +35,9 @@ Las capas 2 y 3 no estarán expuestas a la red pública. Los servidores web util
 
 ## Estructura del Proyecto
 
+A continuación en el `vagrantfile` podemos ver que las maquinas tienen todas manualmente una dirección de red siendo de manera publica el balanceador y el resto privadas
+utilizamos el puerto 9090 por tema de conflictos con otros puertos y los provisionamientos los iré destacanado mas adelante en sus respectivos apartados.
+
 **Vagrantfile**: Archivo de configuración para el aprovisionamiento de las máquinas virtuales.
 
 ````
@@ -122,10 +125,8 @@ sudo apt-get install -y apache2 php libapache2-mod-php
 sudo apt-get install mariadb-client
 
 
-sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/default
-sudo sed -i 's/\/var\/www\/html/\/vagrant/g' /etc/apache2/sites-available/default
+sudo mkdir -p /shared_folder
 
-sudo systemctl restart apache2
 ````
 
 -Provision_nfs.sh
@@ -210,7 +211,11 @@ Finalmente damos los permisos necesarios:
 
 ## Configuración del Servidor Web
 
-Principalmente el shell lo que nos hace es montar la carpeta compartido y en `sudo nano /etc/nginx/sites-available/default` colocamos:
+Principalmente el shell lo que nos hace es crear la carpeta compartida,realizaremos un `sudo mount 192.168.33.23:/shared_folder /shared_folder`
+
+![image](https://github.com/ArturoLucero28/Despliegue-Wordpress-en-Vagrant/assets/146435794/73c8bf50-76ca-4f01-8258-21270f79e358)
+
+y en `sudo nano /etc/nginx/sites-available/default` colocamos:
 
 ````
 
