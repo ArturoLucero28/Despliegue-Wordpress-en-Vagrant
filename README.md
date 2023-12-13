@@ -1,4 +1,4 @@
-# Proyecto Wordpress en Arquitectura de 3/4 Capas en Alta Disponibilidad
+# Proyecto Wordpress en Arquitectura de 3 Capas en Alta Disponibilidad
 
 Este proyecto tiene como objetivo desplegar un CMS Wordpress en una infraestructura de alta disponibilidad de 3 capas, utilizando una pila LEMP.
 
