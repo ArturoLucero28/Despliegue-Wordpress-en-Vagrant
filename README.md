@@ -257,3 +257,8 @@ Aqui principalmente del aprovisamiento podemos destacar la creacion de la base d
 ![image](https://github.com/ArturoLucero28/Despliegue-Wordpress-en-Vagrant/assets/146435794/7ec57c25-c808-4e94-b244-3b9d92836fa2)
 
 
+Y para finalizar esta practica no me ha salido el resultado wordpress debido a este error a pesar de añadirle todos los permisos posibles a las carpetas compartidas, repasar la configuración de nginx, revisor los errores de log .
+
+![image](https://github.com/ArturoLucero28/Despliegue-Wordpress-en-Vagrant/assets/146435794/61ecf3a9-55f4-47be-8653-878a1da47e81)
+
+
